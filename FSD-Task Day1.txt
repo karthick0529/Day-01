@@ -1,0 +1,59 @@
+1. Write a blog on the Difference between HTTP1.1 vs HTTP2
+
+HTTP/1.1
+
+It works in the textual format.
+In HTTP/1.1, a separate connection is required for each request.
+There is head-of-line blocking that blocks all the requests behind it until it doesn’t get its all resources.
+It uses requests resource Inlining for use getting multiple pages
+It compresses data by itself.	
+In HTTP/1.1, web browsers are typically limited to a small number of simultaneous connections per domain. This leads to performance bottlenecks, especially for websites that use a lot of resources.
+
+HTTP/2
+
+It works on the binary protocol.
+It is possible to send and receive multiple requests and responses concurrently using a single connection.
+It allows multiplexing so one TCP connection is required for multiple requests.
+It uses a PUSH frame by the server that collects all multiple pages
+It uses HPACK for data compression.
+Allows for stream prioritization, ensuring critical resources are delivered promptly. This is particularly beneficial for optimizing the rendering of web pages and improving user experience.
+
+2. Write a blog about objects and their internal representation in Javascript
+
+In JavaScript, objects serve as the fundamental building blocks for organizing and manipulating data. Yet, beneath their seemingly simple exterior lies a complex network of internal representations and mechanisms. In this blog, we embark on a journey to unravel the mysteries surrounding objects and delve into their inner workings in JavaScript.
+
+Understanding JavaScript Objects:
+
+An object in JavaScript is a collection of key-value pairs, where each key is a string (or Symbol) and each value can be any JavaScript data type, including other objects. Objects enable developers to structure data coherently, facilitating easier access, manipulation, and organization within a program.
+
+The Anatomy of Objects: Properties and Methods
+
+Objects in JavaScript are composed of properties and methods. Properties are essentially variables that are part of the object, while methods are functions that are associated with the object. These properties and methods collectively define the behavior and characteristics of the object, allowing it to interact with other parts of the program.
+
+Internal Representation of Objects:
+
+JavaScript engines employ various techniques to manage and optimize the storage and access of object properties. One such technique involves using hidden classes (or shapes), which help optimize property access and memory usage by organizing objects with similar structures into common classes.
+
+Property Access and Prototypes:
+
+Accessing the properties of an object involves traversing its internal prototype chain. Each object in JavaScript has an associated prototype object, from which it inherits properties and methods. This prototype-based inheritance mechanism enables objects to share behavior and promotes code reusability.
+
+Example: Exploring Objects in JavaScript
+
+// Define a simple object
+const person = {
+  name: 'John',
+  age: 30,
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  }
+};
+
+// Accessing properties and invoking methods
+console.log(person.name); 
+person.greet(); 
+
+Output: 
+John 
+Output: Hello, my name is John and I'm 30 years old.
+
